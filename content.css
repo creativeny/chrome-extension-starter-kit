@@ -1,0 +1,92 @@
+/* Content script styles - injected into web pages */
+
+#chrome-extension-indicator {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 2147483647 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.extension-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.extension-badge span {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  color: white !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Highlighted links styling */
+.extension-highlighted-link {
+  background-color: #fff3cd !important;
+  border: 1px solid #ffeaa7 !important;
+  border-radius: 3px !important;
+  padding: 1px 3px !important;
+  transition: all 0.2s ease !important;
+}
+
+.extension-highlighted-link:hover {
+  background-color: #ffeaa7 !important;
+  transform: scale(1.02) !important;
+}
+
+/* Animation for the indicator */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+  }
+  to {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+}
+
+#chrome-extension-indicator {
+  animation: slideInRight 0.3s ease-out !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .extension-highlighted-link {
+    background-color: #3d4852 !important;
+    border-color: #4a5568 !important;
+    color: #e2e8f0 !important;
+  }
+  
+  .extension-highlighted-link:hover {
+    background-color: #4a5568 !important;
+  }
+}

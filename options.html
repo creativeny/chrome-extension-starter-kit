@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrome Extension Starter - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Extension Settings</h1>
+      <p>Customize your Chrome Extension Starter experience</p>
+    </header>
+
+    <main>
+      <div class="settings-section">
+        <h2>General Settings</h2>
+        
+        <div class="setting-item">
+          <label class="setting-label">
+            <div class="setting-info">
+              <span class="setting-title">Enable Feature by Default</span>
+              <span class="setting-description">Automatically enable the main feature on all websites</span>
+            </div>
+            <div class="toggle">
+              <input type="checkbox" id="featureEnabled">
+              <span class="slider"></span>
+            </div>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label class="setting-label">
+            <div class="setting-info">
+              <span class="setting-title">Show Notifications</span>
+              <span class="setting-description">Display notifications when the extension performs actions</span>
+            </div>
+            <div class="toggle">
+              <input type="checkbox" id="enableNotifications">
+              <span class="slider"></span>
+            </div>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label class="setting-label">
+            <div class="setting-info">
+              <span class="setting-title">Auto-enable on Specific Domains</span>
+              <span class="setting-description">Automatically enable features on specified websites</span>
+            </div>
+            <div class="toggle">
+              <input type="checkbox" id="autoEnableFeature">
+              <span class="slider"></span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Domain Management</h2>
+        
+        <div class="setting-item">
+          <label for="domainInput" class="setting-title">Auto-enable Domains</label>
+          <div class="domain-input-container">
+            <input type="text" id="domainInput" placeholder="example.com" class="domain-input">
+            <button id="addDomain" class="btn primary">Add</button>
+          </div>
+          <div id="domainList" class="domain-list"></div>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Appearance</h2>
+        
+        <div class="setting-item">
+          <label for="themeSelect" class="setting-title">Theme</label>
+          <select id="themeSelect" class="theme-select">
+            <option value="auto">Auto (System)</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <label for="badgePosition" class="setting-title">Badge Position</label>
+          <select id="badgePosition" class="theme-select">
+            <option value="top-right">Top Right</option>
+            <option value="top-left">Top Left</option>
+            <option value="bottom-right">Bottom Right</option>
+            <option value="bottom-left">Bottom Left</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Data & Privacy</h2>
+        
+        <div class="setting-item">
+          <button id="exportData" class="btn secondary">Export Settings</button>
+          <button id="importData" class="btn secondary">Import Settings</button>
+          <input type="file" id="importFile" accept=".json" style="display: none;">
+        </div>
+
+        <div class="setting-item">
+          <button id="clearData" class="btn danger">Clear All Data</button>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2>About</h2>
+        
+        <div class="about-info">
+          <p><strong>Version:</strong> <span id="version">1.0.0</span></p>
+          <p><strong>Install Date:</strong> <span id="installDate">-</span></p>
+          <p><strong>Last Updated:</strong> <span id="lastUpdated">-</span></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="status" id="status">Settings saved automatically</div>
+      <button id="resetDefaults" class="btn link">Reset to Defaults</button>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
